@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean
+definitions here -->
+
+    <bean id="laptop" class="org.example.Laptop"/>
+    <bean id="router" class="org.example.Router"/>
+    <bean id="notepad" class="org.example.CodeEditor"/>
+    <bean id="github" class="org.example.GitHub"/>
+    <bean id="gitlab" class="org.example.GitLab" primary="true"/>
+    <bean id="studentfinal" class="org.example.Student" autowire="byType">
+        <property name="laptop" ref="laptop"/>
+        <constructor-arg name="router" ref="router"/>
+        <property name="editor" ref="notepad"/>
+    </bean>
+
+</beans>
