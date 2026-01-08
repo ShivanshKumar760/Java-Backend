@@ -10,11 +10,27 @@
   <dependencies>
   
   <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-	<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-webmvc</artifactId>
-	    <version>7.0.0</version>
-	</dependency>
+    <!-- Spring Core -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>6.1.5</version>
+    </dependency>
+
+    <!-- Spring Web MVC (THIS FIXES YOUR ERROR) -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>6.1.5</version>
+    </dependency>
+
+    <!-- Servlet API (provided by Tomcat) -->
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>6.0.0</version>
+        <scope>provided</scope>
+    </dependency>
 	
     <dependency>
       <groupId>junit</groupId>
