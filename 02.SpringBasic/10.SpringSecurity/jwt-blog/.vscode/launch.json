@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-JwtBlogApplication<Jwt-Blog>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.blogjwt.Jwt_Blog.JwtBlogApplication",
+      "projectName": "Jwt-Blog",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
