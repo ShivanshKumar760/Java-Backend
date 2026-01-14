@@ -6,11 +6,13 @@ import com.expensetracker.expensetrackerapi.user.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.expensetracker.expensetrackerapi.user.UserRepo;
 
 import lombok.NonNull;
 
+@Service
 public class UserService implements UserDetailsService {
     
     private final UserRepo userRepo;
@@ -26,9 +28,9 @@ public class UserService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), Collections.emptyList());
     }
 
-    public boolean userExists(String username) {
-        return userRepo.findByUsername(username).isPresent();
-    }
+    // public boolean userExists(String username) {
+    //     return userRepo.findByUsername(username).isPresent();
+    // }
 
     public User saveUser(User user) {
         return userRepo.save(user);
@@ -38,8 +40,8 @@ public class UserService implements UserDetailsService {
         return userRepo.findByEmail(email).orElseThrow();
     }
 
-    public User getUserEntity(String username) {
-        return userRepo.findByUsername(username).orElseThrow();
-    }
+    // public User getUserEntity(String username) {
+    //     return userRepo.findByUsername(username).orElseThrow();
+    // }
     
 }
